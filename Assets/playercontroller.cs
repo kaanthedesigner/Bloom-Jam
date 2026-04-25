@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class playercontroller : MonoBehaviour
 {
     [Header("Hareket Ayarlarý")]
@@ -14,6 +14,8 @@ public class playercontroller : MonoBehaviour
     private Rigidbody2D rb;
     private float horizontal;
     private bool isGrounded;
+    
+    
 
     void Start()
     {
@@ -23,6 +25,10 @@ public class playercontroller : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
+        if (Mathf.Abs(horizontal) < 0.1f)
+        {
+            horizontal = 0;
+        }
 
         // Yer kontrolü
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
