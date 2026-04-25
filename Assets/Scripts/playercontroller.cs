@@ -1,4 +1,4 @@
-using UnityEngine;
+    using UnityEngine;
 using UnityEngine.UI;
 public class playercontroller : MonoBehaviour
 {
@@ -55,5 +55,11 @@ public class playercontroller : MonoBehaviour
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(groundCheck.position, checkRadius);
         }
+    }
+
+    // Persist
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
     }
 }
