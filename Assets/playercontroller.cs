@@ -2,11 +2,11 @@ using UnityEngine;
 using UnityEngine.UI;
 public class playercontroller : MonoBehaviour
 {
-    [Header("Hareket Ayarlarý")]
+    [Header("Hareket Ayarlarï¿½")]
     [SerializeField] private float moveSpeed = 8f;
     [SerializeField] private float jumpForce = 12f;
 
-    [Header("Yer Kontrol Ayarlarý")]
+    [Header("Yer Kontrol Ayarlarï¿½")]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float checkRadius = 0.2f;
     [SerializeField] private LayerMask groundLayer;
@@ -30,24 +30,24 @@ public class playercontroller : MonoBehaviour
             horizontal = 0;
         }
 
-        // Yer kontrolü
+        // Yer kontrolï¿½
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
 
-        // Zýplama
+        // Zï¿½plama
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            // Unity 6+ için linearVelocity kullanýmý
+            // Unity 6+ iï¿½in linearVelocity kullanï¿½mï¿½
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
     }
 
     void FixedUpdate()
     {
-        // Saða sola gitme
+        // Saï¿½a sola gitme
         rb.linearVelocity = new Vector2(horizontal * moveSpeed, rb.linearVelocity.y);
     }
 
-    // Editörde yer kontrol dairesini görmek için (Opsiyonel)
+    // Editï¿½rde yer kontrol dairesini gï¿½rmek iï¿½in (Opsiyonel)
     private void OnDrawGizmos()
     {
         if (groundCheck != null)
@@ -55,5 +55,11 @@ public class playercontroller : MonoBehaviour
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(groundCheck.position, checkRadius);
         }
+    }
+
+    // Persist
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
     }
 }
