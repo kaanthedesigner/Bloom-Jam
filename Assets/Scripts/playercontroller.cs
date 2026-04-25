@@ -56,10 +56,4 @@ public class playercontroller : MonoBehaviour
             Gizmos.DrawWireSphere(groundCheck.position, checkRadius);
         }
     }
-
-    // Persist
-    void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
 }

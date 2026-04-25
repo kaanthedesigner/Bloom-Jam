@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Unity.Cinemachine;
 
 public class SpawnPoint : MonoBehaviour
 {
@@ -15,8 +16,9 @@ public class SpawnPoint : MonoBehaviour
         Debug.Log("Player found: " + (player != null ? player.name : "NULL"));
 
         if (player != null)
+        {
             player.transform.position = transform.position;
-
+        }
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
