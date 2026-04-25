@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 222726910}
   - component: {fileID: 222726909}
   - component: {fileID: 222726912}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: yellowinactive
   m_TagString: YellowPlatform
   m_Icon: {fileID: 0}
@@ -271,6 +271,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorObject
   myColor: Yellow
+  passiveSprite: {fileID: 8775919643211016320, guid: 0fa39516b0cf11b48b5511f47f42bec2, type: 3}
+  activeSprite: {fileID: -2643251698771500067, guid: 7df9f4b64ffa42e41ad939240dce8f7c, type: 3}
 --- !u!1 &361903780
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,7 +1360,7 @@ GameObject:
   - component: {fileID: 1362985307}
   - component: {fileID: 1362985309}
   - component: {fileID: 1362985308}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: platform - red bed_0 (1)
   m_TagString: RedPlatform
   m_Icon: {fileID: 0}
@@ -1567,7 +1569,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507800771}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -1614,7 +1616,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507800771}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1674,7 +1676,7 @@ Transform:
   m_GameObject: {fileID: 1507800771}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.2813602, w: 0.95960224}
-  m_LocalPosition: {x: 26.15, y: -12, z: 0}
+  m_LocalPosition: {x: 26.2, y: -8.4, z: 0}
   m_LocalScale: {x: 0.38719, y: 0.44096106, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2058,7 +2060,7 @@ GameObject:
   - component: {fileID: 1971988872}
   - component: {fileID: 1971988874}
   - component: {fileID: 1971988873}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: platform - red bed_0
   m_TagString: RedPlatform
   m_Icon: {fileID: 0}

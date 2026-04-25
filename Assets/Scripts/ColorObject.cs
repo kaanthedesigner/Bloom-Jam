@@ -9,41 +9,41 @@ public class ColorObject : MonoBehaviour
     [SerializeField] private Sprite activeSprite;  // Renkli olan resim
 
     private SpriteRenderer spriteRenderer;
-    private BoxCollider2D myCollider;
-    private bool isAlreadyActive = false; // Gereksiz Update yükünü önlemek için
+    private BoxCollider2D myCollider; // Collider'ý kontrol etmek için
+    private bool isAlreadyActive = false;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         myCollider = GetComponent<BoxCollider2D>();
 
-        // Oyun baþlarken pasif durumda baþla
-        SetState(false);
+        // OYUN BAÞLADIÐINDA:
+        // Collider'ý tamamen kapatýyoruz (içinden geçilir)
+        if (myCollider != null) myCollider.enabled = false;
+
+        // Pasif resmi gösteriyoruz
+        spriteRenderer.sprite = passiveSprite;
     }
 
     void Update()
     {
-        // Eðer zaten aktifleþmiþse her karede kontrol etmesine gerek yok
         if (isAlreadyActive) return;
 
-        // Manager'da benim rengim aktif oldu mu? (ColorManager ismini senin projene göre kontrol et)
-        if (myColor == "Red" && colormanage.Instance.isRedActive) SetState(true);
-        if (myColor == "Blue" && colormanage.Instance.isBlueActive) SetState(true);
-        if (myColor == "Yellow" && colormanage.Instance.isYellowActive) SetState(true);
+        // ColorManager'dan gelen habere göre kontrol
+        if (myColor == "Red" && colormanage.Instance.isRedActive) SetActive();
+        else if (myColor == "Blue" && colormanage.Instance.isBlueActive) SetActive();
+        else if (myColor == "Yellow" && colormanage.Instance.isYellowActive) SetActive();
     }
 
-    void SetState(bool isActive)
+    void SetActive()
     {
-        if (isActive)
-        {
-            spriteRenderer.sprite = activeSprite; // Renkli resmi tak
-            myCollider.enabled = true;            // Fiziksel hale getir
-            isAlreadyActive = true;               // Durumu kilitle
-        }
-        else
-        {
-            spriteRenderer.sprite = passiveSprite; // Siyah-beyaz resmi tak
-            myCollider.enabled = false;             // Ýçinden geçilebilir yap
-        }
+        // ARTIK AKTÝF:
+        spriteRenderer.sprite = activeSprite; // Renkli resmi tak
+
+        if (myCollider != null)
+            myCollider.enabled = true; // Collider'ý AÇ (artýk üstüne basýlabilir)
+
+        isAlreadyActive = true;
+        Debug.Log(gameObject.name + " platformu artýk aktif ve katý!");
     }
 }
