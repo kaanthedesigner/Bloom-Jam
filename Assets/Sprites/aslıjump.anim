@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "asl\u0131animation2"
+  m_Name: "asl\u0131jump"
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -4646698770154453813, guid: ca2594c93e3c2d64d9862f4af76cc448, type: 3}
-    - time: 0.13333334
-      value: {fileID: -201573519503496745, guid: b7ff5d1615fde9a4aafc2ff548916e0a, type: 3}
-    - time: 0.26666668
-      value: {fileID: 5452768243214242392, guid: e89ec34927d422f42843da02e9cedbaa, type: 3}
-    - time: 0.4
-      value: {fileID: 7508484680467009349, guid: 102caee5c358dfa489863a7fc65deae2, type: 3}
+      value: {fileID: -9166262534982449256, guid: 579e15ba9c29e86489cc545fd547fe47, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,16 +44,13 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -4646698770154453813, guid: ca2594c93e3c2d64d9862f4af76cc448, type: 3}
-    - {fileID: -201573519503496745, guid: b7ff5d1615fde9a4aafc2ff548916e0a, type: 3}
-    - {fileID: 5452768243214242392, guid: e89ec34927d422f42843da02e9cedbaa, type: 3}
-    - {fileID: 7508484680467009349, guid: 102caee5c358dfa489863a7fc65deae2, type: 3}
+    - {fileID: -9166262534982449256, guid: 579e15ba9c29e86489cc545fd547fe47, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.4166667
+    m_StopTime: 0.016666668
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
