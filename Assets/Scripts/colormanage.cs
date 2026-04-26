@@ -23,4 +23,5 @@ public class colormanage : MonoBehaviour
 
         Debug.Log(colorName + " artýk dünyada aktif!");
     }
+    
 }
