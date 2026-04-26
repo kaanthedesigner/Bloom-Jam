@@ -1990,7 +1990,7 @@ GameObject:
   - component: {fileID: 1058799261}
   - component: {fileID: 1058799263}
   - component: {fileID: 1058799262}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square (3)
   m_TagString: RedPlatform
   m_Icon: {fileID: 0}
@@ -3847,7 +3847,7 @@ GameObject:
   - component: {fileID: 1740013529}
   - component: {fileID: 1740013531}
   - component: {fileID: 1740013530}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square (4)
   m_TagString: RedPlatform
   m_Icon: {fileID: 0}
@@ -4209,7 +4209,7 @@ GameObject:
   - component: {fileID: 1819635687}
   - component: {fileID: 1819635689}
   - component: {fileID: 1819635688}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square (5)
   m_TagString: RedPlatform
   m_Icon: {fileID: 0}

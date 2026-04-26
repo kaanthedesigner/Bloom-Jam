@@ -6,7 +6,7 @@ public class HealthManager : MonoBehaviour
 {
     public int health = 3;
     [SerializeField] private Image[] brushes; // F�r�a resimlerini buraya s�r�kleyece�iz
-    [SerializeField] private float fallThreshold = -10f; // Mapten d��me s�n�r�
+    [SerializeField] private float fallThreshold = -20f; // Mapten d��me s�n�r�
     private Vector2 spawnPoint;
 
     void Start()
