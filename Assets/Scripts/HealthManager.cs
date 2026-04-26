@@ -5,18 +5,18 @@ using UnityEngine.UI    ;
 public class HealthManager : MonoBehaviour
 {
     public int health = 3;
-    [SerializeField] private Image[] brushes; // Fýrça resimlerini buraya sürükleyeceðiz
-    [SerializeField] private float fallThreshold = -10f; // Mapten düþme sýnýrý
+    [SerializeField] private Image[] brushes; // Fï¿½rï¿½a resimlerini buraya sï¿½rï¿½kleyeceï¿½iz
+    [SerializeField] private float fallThreshold = -10f; // Mapten dï¿½ï¿½me sï¿½nï¿½rï¿½
     private Vector2 spawnPoint;
 
     void Start()
     {
-        spawnPoint = transform.position; // Baþlangýç yerini kaydet
+        spawnPoint = transform.position; // Baï¿½langï¿½ï¿½ yerini kaydet
     }
 
     void Update()
     {
-        // Mapten düþme kontrolü
+        // Mapten dï¿½ï¿½me kontrolï¿½
         if (transform.position.y < fallThreshold)
         {
             TakeDamage(1);
@@ -27,14 +27,14 @@ public class HealthManager : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        UpdateUI();
+        //UpdateUI();
 
         if (health <= 0)
         {
-            // Öldüðünde arkadaþýnýn yazdýðý sistemi çaðýralým
-            // Arkadaþýn muhtemelen bir "LevelManager" veya "SceneManager" yapýyordur
+            // ï¿½ldï¿½ï¿½ï¿½nde arkadaï¿½ï¿½nï¿½n yazdï¿½ï¿½ï¿½ sistemi ï¿½aï¿½ï¿½ralï¿½m
+            // Arkadaï¿½ï¿½n muhtemelen bir "LevelManager" veya "SceneManager" yapï¿½yordur
             // SceneChanger.Instance.RestartLevel();
-            Debug.Log("Öldüm");
+            Debug.Log("ï¿½ldï¿½m");
         }
     }
 
@@ -42,7 +42,7 @@ public class HealthManager : MonoBehaviour
     {
        /* for (int i = 0; i < brushes.Length; i++)
         {
-            // Eðer caným i'den büyükse fýrça gözüksün, deðilse kapansýn
+            // Eï¿½er canï¿½m i'den bï¿½yï¿½kse fï¿½rï¿½a gï¿½zï¿½ksï¿½n, deï¿½ilse kapansï¿½n
             if (i < health) brushes[i].enabled = true;
             else brushes[i].enabled = false;
         }*/
@@ -51,7 +51,7 @@ public class HealthManager : MonoBehaviour
     void Respawn()
     {
         transform.position = spawnPoint;
-        // Unity 6+ kullanýyorsan hýzý sýfýrlamayý unutma
+        // Unity 6+ kullanï¿½yorsan hï¿½zï¿½ sï¿½fï¿½rlamayï¿½ unutma
         GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
     }
 }
