@@ -15,6 +15,7 @@ public class playercontroller : MonoBehaviour
     private Animator anim; // Animasyon için beyin
     private float horizontal;
     private bool isGrounded;
+    private SpriteRenderer spriteRenderer;
 
     void Awake()
     {
@@ -26,6 +27,7 @@ public class playercontroller : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>(); // Animator bileşenini al
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -66,14 +68,19 @@ public class playercontroller : MonoBehaviour
 
     void FlipCharacter()
     {
-        // Sağa giderken scale pozitif, sola giderken negatif (aynalama)
+        // Karakterinin sahnede şu anki boyutunu baz alalım
+        // Eğer Inspector'da karakterin scale'i 5 ise, bu değer 5 olur.
+        float currentScaleX = Mathf.Abs(transform.localScale.x);
+
         if (horizontal > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            // Sağa bakarken pozitif scale
+            transform.localScale = new Vector3(currentScaleX, transform.localScale.y, transform.localScale.z);
         }
         else if (horizontal < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            // Sola bakarken negatif (aynalanmış) scale
+            transform.localScale = new Vector3(-currentScaleX, transform.localScale.y, transform.localScale.z);
         }
     }
 
