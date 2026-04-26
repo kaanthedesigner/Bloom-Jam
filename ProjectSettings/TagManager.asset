@@ -9,7 +9,6 @@ TagManager:
   - BluePlatform
   - OrangePlatform
   - YellowPlatform
-  - ColorManager
   layers:
   - Default
   - TransparentFX
