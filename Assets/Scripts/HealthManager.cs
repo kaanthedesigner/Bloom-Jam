@@ -12,6 +12,16 @@ public class HealthManager : MonoBehaviour
     void Start()
     {
         spawnPoint = transform.position; // Ba�lang�� yerini kaydet
+                                         // Eğer Inspector'dan sürüklemeyi unuttuysak, sahnede "Brush" adındaki objeleri bulalım
+        if (brushes == null || brushes.Length == 0)
+        {
+            // Önemli: Canvas'taki fırça objelerine "Brush" tag'i verirsen çok rahat buluruz.
+            // Veya isimden bulalım:
+            brushes = new Image[3];
+            brushes[0] = GameObject.Find("Brush_1").GetComponent<Image>();
+            brushes[1] = GameObject.Find("Brush_2").GetComponent<Image>();
+            brushes[2] = GameObject.Find("Brush_3").GetComponent<Image>();
+        }
     }
 
     void Update()
@@ -27,25 +37,25 @@ public class HealthManager : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        //UpdateUI();
+        UpdateUI();
 
         if (health <= 0)
         {
             // �ld���nde arkada��n�n yazd��� sistemi �a��ral�m
             // Arkada��n muhtemelen bir "LevelManager" veya "SceneManager" yap�yordur
-            // SceneChanger.Instance.RestartLevel();
+            
             Debug.Log("�ld�m");
         }
     }
 
     void UpdateUI()
     {
-       /* for (int i = 0; i < brushes.Length; i++)
+         for (int i = 0; i < brushes.Length; i++)
         {
             // E�er can�m i'den b�y�kse f�r�a g�z�ks�n, de�ilse kapans�n
             if (i < health) brushes[i].enabled = true;
             else brushes[i].enabled = false;
-        }*/
+        }
     }
 
     void Respawn()
