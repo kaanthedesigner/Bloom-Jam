@@ -40,12 +40,12 @@ public class HealthManager : MonoBehaviour
 
     void UpdateUI()
     {
-        for (int i = 0; i < brushes.Length; i++)
+       /* for (int i = 0; i < brushes.Length; i++)
         {
             // Eðer caným i'den büyükse fýrça gözüksün, deðilse kapansýn
             if (i < health) brushes[i].enabled = true;
             else brushes[i].enabled = false;
-        }
+        }*/
     }
 
     void Respawn()
